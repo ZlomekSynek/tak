@@ -9,9 +9,9 @@ def main():
     run=True
 #wywolanie klasy waz
     obiektWaz=waz.Waz()
-
-    zmienna=obiektWaz.__pozycja[1]
-    zmienna2=obiektWaz.__pozycja[0]
+    poz=obiektWaz.getPosition()
+    zmienna=poz[1]
+    zmienna2=poz[0]
     #losowanie pozycji jablka
     apleX=random.randint(0,21)*20+10
     apleY=random.randint(0,21)*20+10
@@ -47,9 +47,6 @@ def main():
                 #dodanie nowej pozycji weza
                 #pozycja.append((zmienna2,zmienna))
                 #usuniecie poprzedniej pozycji weza
-                #nie usuwamy pozycji gdy waz zjadl jablko
-                #if len(pozycja)>dlugoscWeza:   
-                 #   del pozycja[0]
         obiektWaz.rysowanie(OknoGry)
         #tworzenie kwadratu jako weza
         #r=pygame.Rect((zmienna2,zmienna),(20,20))
@@ -62,7 +59,8 @@ def main():
         pygame.draw.circle(OknoGry,(255,0,0),(apleX,apleY),10)
         #sprawdzanie czy waz zjada jablko
         if((zmienna+10==apleY) and (zmienna2+10==apleX)):
-            dlugoscWeza=dlugoscWeza+1
+            #dlugoscWeza=dlugoscWeza+1
+            obiektWaz.zjadanie()
             apleX=random.randint(0,21)*20+10
             apleY=random.randint(0,21)*20+10
             pygame.draw.circle(OknoGry,(128,128,128),(apleX,apleY),10)
