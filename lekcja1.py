@@ -37,7 +37,7 @@ def main():
                     zmienna=zmienna-20
                 elif zdarzenie.key==pygame.K_DOWN:
                     zmienna=zmienna+20
-                obiektWaz.ruch(zmienna2,zmienna)
+                
                 #sprawdzenie czy waz nie zjada siebie
                 #for location in pozycja [::]:
                  #   if zmienna==location[1] and zmienna2==location[0]:
@@ -47,6 +47,9 @@ def main():
                 #dodanie nowej pozycji weza
                 #pozycja.append((zmienna2,zmienna))
                 #usuniecie poprzedniej pozycji weza
+                #if len(pozycja)>dlugoscWeza:
+                    #del pozycja[0]
+        obiektWaz.ruch(zmienna2,zmienna)
         obiektWaz.rysowanie(OknoGry)
         #tworzenie kwadratu jako weza
         #r=pygame.Rect((zmienna2,zmienna),(20,20))
@@ -65,20 +68,31 @@ def main():
             apleY=random.randint(0,21)*20+10
             pygame.draw.circle(OknoGry,(128,128,128),(apleX,apleY),10)
             #zwiekszenie liczby punktow
-            punkty=punkty+1
+            #punkty=punkty+1
         #wypisanie punktow na ekran
         czcionka=pygame.font.SysFont('comicsans',30)
-        tekst=czcionka.render("Zdobyłes punkt: {0}".format(punkty),1,(255,160,0))
+        tekst=czcionka.render("Zdobyłes punkt: {0}".format(obiektWaz.punkty),1,(255,160,0))
         OknoGry.blit(tekst, (10,10))
-        if zmienna2<0:
-            zmienna2=440
-       
+        
+        #pobieranie pozycji glowy
+        glowa=obiektWaz.getPosition()
+        #prawa czesc okna
+        if glowa[0]>420:
+            obiektWaz.setPosition(0,glowa[1])
+        #lewa czesc okna
+        if glowa[0]<0:
+            obiektWaz.setPosition(420,glowa[1])
+        #dol ekranu
+        if glowa[1]>420:
+            obiektWaz.setPosition(glowa[0],0)
+        #gora ekranu
+        if glowa[1]<0:
+            obiektWaz.setPosition(glowa[0],420)
+        #zmienna2=zmienna2 +20
         if zmienna2>440:
             zmienna2=0
-
         if zmienna>440:
             zmienna=0
-
         if zmienna<0:
             zmienna=440
         pygame.display.update()
