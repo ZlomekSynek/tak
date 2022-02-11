@@ -12,7 +12,9 @@ class Waz():
         return self.__pozycja[-1]
     def setPosition(self,x,y):
         self.__pozycja[-1]=(x,y)
-    def ruch(self,x,y):
+    def setKierunek(self,direction):
+            self.kierunek=direction
+    def ruch(self):
         #obliczanie nowej pozycji
         ostatniaPozycja=self.__pozycja[-1]
         x=ostatniaPozycja[0]+20*self.kierunek[0]
