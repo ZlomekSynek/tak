@@ -3,6 +3,11 @@ import random
 import waz
 import jablko
 
+#zmianne globalne
+kolorWaz1=(150,60,0)
+def zmianaKolorWaz1(self,kolor):
+    kolorWaz1=kolor
+
 def main():
     pygame.init()
     OknoGry=pygame.display.set_mode((440,440),0,32)
@@ -12,6 +17,7 @@ def main():
     #wywolanie klasy waz
     obiektWaz1=waz.Waz()
     obiektWaz2=waz.Waz()
+    obiektWaz1.ustawKolor(kolorWaz1)
     #tworzenoe kilku jablek
     obiektJablko=[]
     for nrJablko in range(0,iloscJablek):
@@ -116,4 +122,4 @@ def main():
         
         pygame.display.update()
 
-main()
+#main()

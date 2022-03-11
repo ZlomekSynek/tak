@@ -8,6 +8,7 @@ class Waz():
         self.dlugoscWeza=1
         self.punkty=0
         self.kierunek=(0,-1)
+        self.kolor=(0,255,0)
     def getPosition(self):
         return self.__pozycja[-1]
     def setPosition(self,x,y):
@@ -41,7 +42,7 @@ class Waz():
         #rysowanie weza z pozycji
          for poz in self.__pozycja[::-1]:
             r=pygame.Rect((poz[0],poz[1]),(20,20))
-            pygame.draw.rect(OknoGry,(0,255,0),r)
+            pygame.draw.rect(OknoGry,self.kolor,r)
     #czy ktos zjadl waz
     def czyKtosMnieUgryzl(self,pozycja):
         for czesciCiala in self.__pozycja[::]:
@@ -49,3 +50,5 @@ class Waz():
                 self.__pozycja=[(pozycja[0],pozycja[1])]
                 self.dlugoscWeza=1
                 self.punkty=0
+    def ustawKolor(self,nowyKolor):
+        self.kolor=nowyKolor
