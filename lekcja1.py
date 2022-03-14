@@ -6,9 +6,9 @@ import jablko
 #zmianne globalne
 obiektWaz1=waz.Waz()
 obiektWaz2=waz.Waz()
-def zmianaKolorWaz1(self,kolor):
+def zmianaKolorWaz1(kolor):
     obiektWaz1.ustawKolor(kolor)
-def zmianaKolorWaz2(self,kolor):
+def zmianaKolorWaz2(kolor):
     obiektWaz2.ustawKolor(kolor)
 
 
@@ -18,6 +18,10 @@ def main():
     pygame.display.set_caption("3tieg")
     run=True
     iloscJablek=3
+    #wywolanie klasy waz
+
+
+
     #tworzenoe kilku jablek
     obiektJablko=[]
     for nrJablko in range(0,iloscJablek):
