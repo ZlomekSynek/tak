@@ -10,14 +10,15 @@ def zmianaKolorWaz1(kolor):
     obiektWaz1.ustawKolor(kolor)
 def zmianaKolorWaz2(kolor):
     obiektWaz2.ustawKolor(kolor)
-
-
+iloscJablek=3
+def zmianaIlosciJablek(ilosc):
+    iloscJablek=ilosc
 def main():
     pygame.init()
     OknoGry=pygame.display.set_mode((440,440),0,32)
     pygame.display.set_caption("3tieg")
     run=True
-    iloscJablek=3
+    
     #wywolanie klasy waz
 
 
