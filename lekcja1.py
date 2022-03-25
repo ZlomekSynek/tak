@@ -11,7 +11,7 @@ def zmianaKolorWaz1(kolor):
     obiektWaz1.ustawKolor(kolor)
 def zmianaKolorWaz2(kolor):
     obiektWaz2.ustawKolor(kolor)
-iloscJablek=3
+iloscJablek=1
 def zmianaIlosciJablek(ilosc):
     iloscJablek=ilosc
 def main():
@@ -21,6 +21,7 @@ def main():
     run=True
     
     #wywolanie klasy waz
+
 
 
 
@@ -96,36 +97,9 @@ def main():
         OknoGry.blit(tekst, (10,10))
         OknoGry.blit(tekst2, (250,10))
         
-        #pobieranie pozycji glowy
-        glowa1=obiektWaz1.getPosition()
-        glowa2=obiektWaz2.getPosition()
-        #sprawdzanie przejścia przez krawędź okna
-        #prawa czesc okna
-        if glowa1[0]>rozdzielczosc-20:
-            obiektWaz1.setPosition(0,glowa1[1])
-        #lewa czesc okna
-        if glowa1[0]<0:
-            obiektWaz1.setPosition(rozdzielczosc-20,glowa1[1])
-        #dol ekranu
-        if glowa1[1]>rozdzielczosc-20:
-            obiektWaz1.setPosition(glowa1[0],0)
-        #gora ekranu
-        if glowa1[1]<0:
-            obiektWaz1.setPosition(glowa1[0],rozdzielczosc-20)
-        #prawa czesc okna
-        if glowa2[0]>rozdzielczosc-20:
-            obiektWaz2.setPosition(0,glowa2[1])
-        #lewa czesc okna
-        if glowa2[0]<0:
-            obiektWaz2.setPosition(rozdzielczosc-20,glowa2[1])
-        #dol ekranu
-        if glowa2[1]>rozdzielczosc-20:
-            obiektWaz2.setPosition(glowa2[0],0)
-        #gora ekranu
-        if glowa2[1]<0:
-            obiektWaz2.setPosition(glowa2[0],rozdzielczosc-20)
-        
-        
+       
+
+       
         pygame.display.update()
 
 #main()

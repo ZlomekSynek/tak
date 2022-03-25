@@ -1,4 +1,5 @@
 import pygame
+import lekcja1
 
 class Waz():
     #konstruktor klasy
@@ -26,8 +27,10 @@ class Waz():
                     self.__pozycja=[(x,y)]
                     self.dlugoscWeza=1
                     self.punkty=0
+        #sprawdzenie czy waz nie wyszedł za krawędzie
+        noweWspl=self.sprawdzKrawedz(x,y)
         #dodanie nowej pozycji weza
-        self.__pozycja.append((x,y))
+        self.__pozycja.append(noweWspl)
         #nie usuwamy pozycji gdy waz zjadl jablko
         if len(self.__pozycja)>self.dlugoscWeza:   
             del self.__pozycja[0]
@@ -52,3 +55,14 @@ class Waz():
                 self.punkty=0
     def ustawKolor(self,nowyKolor):
         self.kolor=nowyKolor
+        #sprawdzenie krawędzi
+    def sprawdzKrawedz(self, x,y):
+        if x>lekcja1.rozdzielczosc:
+            x=0
+        if x<0:
+            x=lekcja1.rozdzielczosc
+        if y>lekcja1.rozdzielczosc:
+            y=0
+        if y<0:
+            y=lekcja1.rozdzielczosc
+        return (x,y)

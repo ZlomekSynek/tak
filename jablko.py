@@ -1,5 +1,6 @@
 import random
 import pygame
+import lekcja1
 
 class Jablko():
     #konstruktor klasy
@@ -12,8 +13,8 @@ class Jablko():
         return self.pozycjaJablka[-1]
     def losujPozycje(self):
         #losowanie pozycji jablka
-        apleX=random.randint(0,21)*20+10
-        apleY=random.randint(0,21)*20+10
+        apleX=random.randint(0,lekcja1.rozdzielczosc//20)*20+10
+        apleY=random.randint(0,lekcja1.rozdzielczosc//20)*20+10
         self.setPozycja(apleX,apleY)
     def rysujJablko(self,oknoGry):
          pygame.draw.circle(oknoGry,(255,0,0),(self.pozycjaJablka[0][0],self.pozycjaJablka[0][1]),10)

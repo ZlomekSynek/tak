@@ -4,7 +4,6 @@ import lekcja1
 
 def wlaczGre():
     lekcja1.main()
-
 def zmienKolorWaz1(value):
     lekcja1.zmianaKolorWaz1(value)
 def zmienKolorWaz2(value):
